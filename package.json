@@ -1,6 +1,6 @@
 {
   "name": "draw.io",
-  "version": "10.1.9",
+  "version": "10.8.8",
   "description": "draw.io desktop",
   "main": "electron.js",
   "scripts": {
@@ -26,11 +26,19 @@
   "homepage": "https://github.com/jgraph/drawio",
   "dependencies": {
     "commander": "^2.19.0",
-    "electron-log": "^2.2.17"
+    "electron-log": "^2.2.17",
+    "electron-progressbar": "^1.2.0",
+    "electron-store": "^3.2.0",
+    "electron-updater": "^4.0.6",
+    "yargs": "^13.2.2",
+    "compression": "^1.7.4",
+    "crc": "^3.8.0"
   },
   "devDependencies": {
-    "electron": "^3.0.6",
-    "electron-builder": "^20.29.0",
+    "dotenv": "^8.0.0",
+    "electron": "^5.0.1",
+    "electron-builder": "^20.43.0",
+    "electron-notarize": "^0.1.1",
     "sumchecker": "^2.0.2"
   }
 }
