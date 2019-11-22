@@ -18,6 +18,7 @@ clone_script:
 
 install:
   - ps: Install-Product node 10 x64
+  - npm install -g yarn
   - yarn install
   - cd drawio/src/main/webapp
   - yarn install
@@ -27,6 +28,6 @@ before_build:
 
 build_script:
   - yarn run sync
-  - yarn run release
+  - yarn run release-win
 
 test: off

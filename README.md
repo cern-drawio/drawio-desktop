@@ -3,11 +3,26 @@ About
 
 **drawio-desktop** is a **draw.io** desktop app based on [Electron](https://electronjs.org/).
 
-Download from [get.draw.io](https://get.draw.io).
+Download built binaries from the [releases section](https://github.com/jgraph/drawio-desktop/releases).
 
-[![Build Status](https://travis-ci.org/jgraph/drawio-desktop.svg?branch=master)](https://travis-ci.org/jgraph/drawio-desktop)
+Travis MacOS/Linux builds   [![Build Status](https://travis-ci.com/jgraph/drawio-desktop.svg?branch=master)](https://travis-ci.org/jgraph/drawio-desktop)
 
-[![Build status](https://ci.appveyor.com/api/projects/status/e56wdssukquwe7bv?svg=true)](https://ci.appveyor.com/project/davidjgraph/drawio-desktop)
+Appveyor Windows build  [![Build status](https://ci.appveyor.com/api/projects/status/e56wdssukquwe7bv?svg=true)](https://ci.appveyor.com/project/davidjgraph/drawio-desktop)
+
+Security
+--------
+
+draw.io Desktop is designed to be completely isolated from the Internet. All JavaScript files are self-contained, the Content Security Policy forbids running remotely loaded JavaScript.
+
+No diagram data is ever sent externally, nor do we send any analytics about app usage externally. This means certain functionality for which we do not have a JavaScript implementation do not work in the Desktop build, namely .vsd and Gliffy import.
+
+Build Status
+------------
+
+
+
+Developing
+----------
 
 **draw.io** is a git submodule of **drawio-desktop**. To get both you need to clone recursively:
 
@@ -16,7 +31,7 @@ Download from [get.draw.io](https://get.draw.io).
 To run this:
 1. npm install (in the root directory of this repo)
 2. npm install (in the drawio directory of this repo)
-3. export NODE_ENV=development if you want to develop/debug in dev mode.
+3. export DRAWIO_ENV=dev if you want to develop/debug in dev mode.
 4. If you run in dev mode, clone https://github.com/jgraph/mxgraph as a sibling directory to this repo, rename the folder containing the repo "mxgraph2".
 5. npm start runs the app.
 

@@ -12,11 +12,9 @@
     "output": "./dist/"
   },
   "npmRebuild": false,
-  "publish": [
-    {
+  "publish": {
       "provider": "github"
-    }
-  ],
+  },
   "win": {
     "target": [
       "nsis",
@@ -29,29 +27,11 @@
   "portable": {
     "artifactName": "${productName}-${version}-portable.${ext}"
   },
-  "mac": {
-  	"hardenedRuntime": true,
-  	"gatekeeperAssess": false,
-  	"entitlements": "build/entitlements.mac.plist",
-  	"entitlementsInherit": "build/entitlements.mac.plist",
-    "category": "public.app-category.graphics-design",
-    "target": [
-      "zip",
-      "dmg"
-    ]
-  },
-  "afterSign": "build/notarize.js",
-  "dmg": {
-  },
-  "linux": {
-    "category": "Graphics",
-    "maintainer": "JGraph <support@draw.io>",
-    "target": [
-      "AppImage",
-      "deb",
-      "rpm",
-      "snap"
-    ]
+  "appx": {
+    "displayName": "draw.io Diagrams",
+    "publisherDisplayName": "JGraph Ltd",
+    "identityName": "draw.io.draw.ioDiagrams",
+    "publisher": "CN=9E628CCB-BE04-4557-A5A8-81EC34B09733"
   },
   "fileAssociations": [
 	  {
