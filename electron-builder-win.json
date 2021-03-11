@@ -17,10 +17,6 @@
   },
   "win": {
     "target": [
-<<<<<<< HEAD
-      "nsis",
-      "portable"
-=======
       {
           "target": "nsis",
           "arch": [
@@ -33,7 +29,6 @@
             "x64"
           ]
       }
->>>>>>> master
     ]
   },
   "nsis": {

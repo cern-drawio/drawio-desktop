@@ -1,12 +1,7 @@
 {
   "name": "draw.io",
-<<<<<<< HEAD
-  "version": "12.2.8-cern",
+  "version": "14.4.3-cern",
   "description": "draw.io desktop",
-=======
-  "version": "14.4.3",
-  "description": "diagrams.net desktop",
->>>>>>> master
   "main": "electron.js",
   "scripts": {
     "start": "electron ./drawio/src/main/webapp",
