@@ -7,17 +7,14 @@ const appjsonpath = path.join(__dirname, 'drawio', 'src/main/webapp', 'package.j
 const disableUpdatePath = path.join(__dirname, 'drawio', 'src/main/webapp', 'disableUpdate.js')
 
 let ver = fs.readFileSync(path.join(__dirname, 'drawio', 'VERSION'), 'utf8')
-//let ver = '11.2.5' // just to test autoupdate
+//let ver = '14.1.5' // just to test autoupdate
 
 let pj = require(appjsonpath)
 
 pj.version = ver
 
 fs.writeFileSync(appjsonpath, JSON.stringify(pj, null, 2), 'utf8')
-
-if (process.argv[2] == 'disableUpdate')
-{
-	fs.writeFileSync(disableUpdatePath, 'module.exports = { disableUpdate: function() { return true;}}', 'utf8');
-}
+//Enable/disable updates
+fs.writeFileSync(disableUpdatePath, 'module.exports = { disableUpdate: function() { return ' + (process.argv[2] == 'disableUpdate'? 'true' : 'false') + ';}}', 'utf8');
 
 child_process.spawnSync('yarn', ['install', '--production'], {cwd: electronAppDir})

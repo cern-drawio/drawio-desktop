@@ -15,38 +15,22 @@
   "publish": {
       "provider": "github"
   },
-  "mac": {
-  	"hardenedRuntime": true,
-  	"gatekeeperAssess": false,
-  	"entitlements": "build/entitlements.mac.plist",
-  	"entitlementsInherit": "build/entitlements.mac.plist",
-    "category": "public.app-category.graphics-design",
+  "win": {
     "target": [
-      { "target": "zip", "arch": [
-          "x64",
-          "arm64"
-        ]
-      },
-      { "target": "dmg", "arch": [
-          "x64",
-          "arm64"
-        ]
+      {
+          "target": "appx",
+          "arch": [
+            "x64",
+            "ia32"
+          ]
       }
     ]
   },
-  "afterSign": "build/notarize.js",
-  "dmg": {
-  },
-  "linux": {
-  	"executableName": "drawio",
-    "category": "Graphics",
-    "maintainer": "JGraph <support@draw.io>",
-    "icon": "./build",
-    "target": [
-      "AppImage",
-      "deb",
-      "rpm"
-    ]
+  "appx": {
+    "displayName": "draw.io Diagrams",
+    "publisherDisplayName": "JGraph Ltd",
+    "identityName": "draw.io.draw.ioDiagrams",
+    "publisher": "CN=9E628CCB-BE04-4557-A5A8-81EC34B09733"
   },
   "fileAssociations": [
 	  {
